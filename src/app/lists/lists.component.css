@@ -1,0 +1,13 @@
+.list {
+    margin: 20px;
+    background-color: lightsteelblue;
+    width: 400px;
+    height: 400px;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+h3{
+    color: black;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 14px;
+}
