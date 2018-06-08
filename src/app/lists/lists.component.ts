@@ -8,7 +8,11 @@ import { List } from '../models';
 })
 export class ListsComponent implements OnInit {
 
-  @Input() list: string;
+
+ @Input() list: List = {
+    id: 1,
+    name: 'Task List',
+  };
 
   constructor() { }
 
