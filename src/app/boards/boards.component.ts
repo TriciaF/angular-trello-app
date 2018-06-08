@@ -9,8 +9,16 @@ import { Board, List } from '../models';
 })
 export class BoardsComponent implements OnInit {
 
-  board: Board;
-  selectedList = 'Test List';
+  board: Board = {
+    id: 1,
+    name: 'Test Board',
+    lists: [],
+  };
+
+  selectedList: List = {
+    id: 1,
+    name: 'Test List',
+  };
 
   constructor() { }
 
