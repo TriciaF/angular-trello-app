@@ -1,14 +1,18 @@
-.list {
-    margin: 20px;
-    background-color: lightsteelblue;
-    width: 400px;
-    height: 400px;
+.list-cards {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+} 
+    
+    
+.card {
+    list-style-type: none;
     border: 1px solid black;
     border-radius: 5px;
-}
-h3{
-    margin: 20px;
-    color: black;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 14px;
+    min-width: 80px;
+    min-height: 20px;
+    background-color: lightsteelblue;
+    text-align: center;
+    padding: auto;
+
 }

@@ -1,12 +1,16 @@
 <div class="list"> 
-    <h3>{{list.name}}</h3>
-    <ul class="list-objects">
-        <li *ngFor="let list of lists">
-            {{list.cards}}
+    <ul class="list-cards">
+        <li class="card" *ngFor="let card of cards">
+            {{card.name}}
+           <app-cards>[cards]="cards"</app-cards> 
         </li>
     </ul> 
-    <label for="cardName">List Item</label>
-            <input type="text" class="card-name" id="cardName"
-              [(ngModel)]="cardName" name="cardName">{{cardName}}
-    <button type="button" class="btn" (click)="addCard()">Add List Item</button>
+</div>
+<div>
+        <label for="cardName">Task</label>
+        <input #cardName 
+            (keyup.enter)="addCard(cardName.value)">
+        <button type="submit" class="bnt" (click)="addCard(cardName.value)">
+            Add Card
+        </button>
 </div>

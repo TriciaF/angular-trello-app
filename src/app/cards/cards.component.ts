@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Card } from '../models';
 
 
@@ -8,8 +8,10 @@ import { Card } from '../models';
   styleUrls: ['./cards.component.css']
 })
 export class CardsComponent implements OnInit {
+  @Input() cards;
 
   constructor() { }
+
 
   ngOnInit() {
   }

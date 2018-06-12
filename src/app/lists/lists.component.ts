@@ -8,26 +8,30 @@ import { CardsComponent } from '../cards/cards.component';
   styleUrls: ['./lists.component.css']
 })
 export class ListsComponent implements OnInit {
+  @Input() lists;
 
-  list: List = {
-    id: 0,
-    name: '',
-    cards: []
-  };
+  cards: Card[];
 
-  cardName: string;
   id = 0;
 
-  addCard(): void {
-    const newCard: Card = {
+  addCard(cardName: string): void {
+    console.log('addCard called');
+    this.cards.push({
       id: this.id,
-      name: this.cardName,
-    };
-    this.list.cards.push(newCard);
-    console.log('Added new card ', this.list.cards[this.id]);
-    this.id = this.id + 1;
+      name: cardName
+    });
+    console.log('Added new card ', this.cards[this.id]);
+    this.id += 1;
   }
-  constructor() { }
+
+  getCards(): Card[] {
+    return this.cards;
+  }
+
+  constructor() {
+    this.cards = [{ id: 0, name: '' }];
+   }
 
   ngOnInit() {
+    this.getCards();
 }

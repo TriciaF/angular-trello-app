@@ -2,4 +2,18 @@ h3 {
     margin: 20px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
+.board-lists {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-around;
+}
+
+.list {
+    list-style: none;
+    min-width: 300px;
+    min-height: 300px;
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: whitesmoke;
+}
     
