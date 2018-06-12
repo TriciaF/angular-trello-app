@@ -1,3 +1,12 @@
 <div class="list"> 
     <h3>{{list.name}}</h3>
+    <ul class="list-objects">
+        <li *ngFor="let list of lists">
+            {{list.cards}}
+        </li>
+    </ul> 
+    <label for="cardName">List Item</label>
+            <input type="text" class="card-name" id="cardName"
+              [(ngModel)]="cardName" name="cardName">{{cardName}}
+    <button type="button" class="btn" (click)="addCard()">Add List Item</button>
 </div>

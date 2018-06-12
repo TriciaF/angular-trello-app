@@ -1,2 +1,12 @@
 <h3>{{board.name}}</h3>
-<app-lists [list]="selectedList"></app-lists>
+<div>
+    <label for="listName">List Name</label>
+    <input #listName 
+        (keyup.enter)="addList(listName.value)">
+    <button type="submit" class="bnt" (click)="addList(listName.value)">Add List</button>
+</div>
+ <div>
+     <ul>
+         <li *ngFor="let boards of board">{{boards.lists}}</li>
+     </ul>
+ </div>

@@ -9,20 +9,33 @@ import { Board, List } from '../models';
 })
 export class BoardsComponent implements OnInit {
 
-  board: Board = {
-    id: 1,
-    name: 'Test Board',
-    lists: [],
-  };
+board: Board  = {
+  id: 0,
+  name: 'Trello Board',
+  lists: [{
+    id: 0,
+    name: 'First List',
+    cards: []
+  }]
+};
 
-  selectedList: List = {
-    id: 1,
-    name: 'Test List',
-  };
+id = 1;
+
+  addList(listName: string): void {
+    const newList: List = { id: this.id, name: listName, cards: [] };
+    this.board.lists.push(newList);
+    console.log('This is the new list ', this.board.lists[this.id]);
+    this.id = this.id + 1;
+  }
+
+  getLists(): List[] {
+    return this.board.lists;
+  }
 
   constructor() { }
 
   ngOnInit() {
+    this.getLists();
   }
 
 }
