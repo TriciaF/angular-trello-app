@@ -7,8 +7,8 @@
     </ul>
 </div>
     <div>
-        <label for="listName">List Name</label>
-        <input #listName 
-            (keyup.enter)="addList(listName.value)">
+        <label for="listName"></label>
+        <input class='input' #listName 
+            (keyup.enter)="addList(listName.value)" placeholder="List Name">
         <button type="submit" class="bnt" (click)="addList(listName.value)">Add List</button>
     </div>

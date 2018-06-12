@@ -1,18 +1,31 @@
 .list-cards {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     flex-direction: column;
+    padding: 5px;
 } 
     
     
 .card {
     list-style-type: none;
-    border: 1px solid black;
-    border-radius: 5px;
+    border-radius: 2px;
     min-width: 80px;
-    min-height: 20px;
-    background-color: lightsteelblue;
+    min-height: 25px;
+    background-color: whitesmoke;
     text-align: center;
-    padding: auto;
+    margin: 5px;
 
+}
+
+.add-card-input {
+    float: bottom;
+}
+.input {
+    text-align: center;
+    padding: 5px;
+    margin:10px;
+}
+.btn {
+    width: 30px;
+    height: 20px;
 }

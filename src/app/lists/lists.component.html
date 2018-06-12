@@ -6,11 +6,12 @@
         </li>
     </ul> 
 </div>
-<div>
-        <label for="cardName">Task</label>
-        <input #cardName 
-            (keyup.enter)="addCard(cardName.value)">
-        <button type="submit" class="bnt" (click)="addCard(cardName.value)">
-            Add Card
+<div class="add-card-input">
+        <label for="cardName"></label>
+        <input class='input' onfocus="if(this.value == 'value') { this.value = ''; }" value="item"
+            #cardName
+            (keyup.enter)="addCard(cardName.value)" placeholder="item">
+        <button type="text" class="bnt" (click)="addCard(cardName.value)">
+            Add Item
         </button>
 </div>
