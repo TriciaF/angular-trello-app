@@ -1,0 +1,3 @@
+[submodule "angular-trello-app"]
+	path = angular-trello-app
+	url = https://github.com/TriciaF/angular-trello-app.git

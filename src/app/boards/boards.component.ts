@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Board, List } from '../models';
-
+import { ListsService } from '../lists.service';
+import { LISTS } from '../board-data';
 
 @Component({
   selector: 'app-boards',
@@ -12,7 +13,7 @@ export class BoardsComponent implements OnInit {
 lists: List[];
 
 id = 1;
-
+/*
   addList(listName: string): void {
     console.log('addList called');
     const newList: List = { id: this.id, name: listName, cards: [] };
@@ -24,9 +25,27 @@ id = 1;
   getLists(): List[] {
     return this.lists;
   }
+*/
 
-  constructor() {
-    this.lists = [{ id: 0, name: 'First List', cards: [] }];
+  addList(listName: string ): void {
+    console.log('enter BoardsComponent: addList');
+    listName = listName.trim();
+    if (!listName)
+      {return}
+    const newList: List = {id: this.id, name: listName, cards: [] };
+    this.listService.addList( newList )
+      .subscribe( list => {
+        console.log('this is the list back from listService ', + list);
+        this.lists.push(list);
+      });
+
+    this.id += 1;
+  }
+
+  // deleteList
+
+
+  constructor(private listService: ListsService) {
   }
 
   ngOnInit() {

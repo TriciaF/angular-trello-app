@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { List, Card } from '../models';
 import { CardsComponent } from '../cards/cards.component';
+import { CardsService } from '../cards.service';
 
 @Component({
   selector: 'app-lists',
@@ -28,10 +29,14 @@ export class ListsComponent implements OnInit {
     return this.cards;
   }
 
-  constructor() {
+
+  //deleteList
+
+  constructor(private cardService: CardsService) {
     this.cards = [{ id: 0, name: '' }];
    }
 
   ngOnInit() {
     this.getCards();
+}
 }
